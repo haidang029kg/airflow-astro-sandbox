@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "airflow"
+version = "0.1.0"
+description = ""
+authors = ["Dang Vu <vnhd1995@gmail.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "3.12"
+apache-airflow = { extras = ["amazon"], version = "^2.10.0" }
+apache-airflow-providers-apache-spark = "^4.10.0"
+pandas = "2.2.2"
+xarray = "2024.7.0"
+netcdf4 = "1.7.1.post2"
+pyarrow = "17.0.0"
+
+
+[tool.poetry.group.dev-neovim.dependencies]
+neovim = "^0.3.1"
+flake8 = "7.0.0"
+jupyter = "^1.0.0"
+pynvim = "^0.5.0"
+pyproject-flake8 = "^7.0.0"
+
+
+[tool.isort]
+multi_line_output = 3
+line_length = 90
+include_trailing_comma = true
+
+[tool.flake8]
+max-complexity = 10
+max-line-length = 90
+
+[tool.black]
+line-length = 90
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

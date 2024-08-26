@@ -1,0 +1,13 @@
+networks:
+  de-network:
+    external: true
+
+services:
+  scheduler:
+    networks:
+      - de-network
+    deploy:
+        resources:
+          limits:
+            memory: 16g
+            cpus: "4.0"
