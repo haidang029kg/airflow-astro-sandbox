@@ -130,9 +130,6 @@ def get_s3_object_key_from_exec_date(**kwargs):
     s3_object_key = f"MERRA2_400.inst3_3d_asm_Np.{formatted_date}.nc4"
     return s3_object_key
 
-    ti = kwargs["ti"]
-    ti.xcom_push(key="s3_object_key", value=s3_object_key)
-
 
 with DAG(
     dag_id="merra_etl",
